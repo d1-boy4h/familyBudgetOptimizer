@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Оптимизатор семейного бюджета</title>
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/animations.css">
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body id="body">
+        <!-- Окно приветствия -->
+        <div class="welcome_screen animation fadeInDown">
+            <h1 class="title animation fadeInDown">Оптимизатор семейного бюджета</h1>
+            <p class="subtitle animation fadeInDownSlow">Добро пожаловать в Оптимизатор семейного бюджета! Данная программа поможет Вам и Вашей семье распределить бюджет, пользуясь методом 6 кувшинов. Приступим?</p>
+            <button class="button" id="welcome-button" type="button">Начать</button>
+        </div>
+
+        <!-- Окно ввода заработной платы -->
+        <div class="input_screen animation fadeInLeft">
+            <p class="title animation fadeInLeftSlow">Необходимы данные</p>
+            <p class="subtitle animation fadeInLeftSlow">Введите в поле ниже месячный бюджет Вашей семьи, а программа всё посчитает и разделит её на 6 кувшинов:</p>
+            <form class="salary_form" action="" method="post">
+                <input id="salary" type="text" placeholder="Пример: 30000">
+                <button class="button" id="input-button" type="button">Отправить</button>
+            </form>
+        </div>
+
+        <!-- Окно загрузки -->
+        <div class="loading_screen animation fadeInRight">
+            <p class="title animation fadeInRightSlow">Загрузка</p>
+            <div class="spinner">
+                <div class="block"></div>
+                <div class="block"></div>
+                <div class="block"></div>
+                <div class="block"></div>
+                <div class="block"></div>
+                <div class="block"></div>
+                <div class="block"></div>
+                <div class="block"></div>
+                <div class="block"></div>
+                <div class="block"></div>
+                <div class="block"></div>
+                <div class="block"></div>
+                <div class="block"></div>
+                <div class="block"></div>
+                <div class="block"></div>
+                <div class="block"></div>
+            </div>
+        </div>
+
+        <!-- Окно с диаграммами -->
+        <div class="result_screen animation fadeInUp">
+            <canvas id="myChart" class="my_chart animation fadeInSlow"></canvas>
+            <ul class="animation fadeInUpSlow">
+                <p>Ваш персональный расчёт:</p>
+                <li>
+                    Кувшин 1: <span id="budget-1"></span>. Быт — 55%. В этом кувшине находятся деньги на текущие расходы: продукты, коммунальные платежи, кредиты, лекарства, проезд, медицина и т.п. В основном, это все предметы первой необходимости.
+                </li>
+                <li>
+                    Кувшин 2: <span id="budget-2"></span>. Развлечение — 10%. Деньги из этого кувшина тратить с целью заботы о себе. Совершать покупки которые обычно не делаете. На деньги из этого кувшина можно сходить на массаж, в картинг-клуб, на концерт или отправиться на выходные. Побалуйте себя, доставьте себе удовольствие без угрызения совести за излишне потраченные деньги.
+                </li>
+                <li>
+                    Кувшин 3: <span id="budget-3"></span>. Инвестиции — 10%. Данный кувшин — это билет к вашей финансовой свободе. Деньги из этого кувшина не тратятся ни при каких условиях, а используются для инвестиций и получения пассивного дохода. Даже когда вы будете финансово свободны, тратить можно будет только прибыль.
+                </li>
+                <li>
+                    Кувшин 4: <span id="budget-4"></span>. Образование — 10%. Из этого кувшина деньги тратятся на образование и развитие личности. Инвестиции в себя и детей — отличный способ использовать свои деньги. Деньги тратятся на оплату обучения, курсов, мастер-классов, тренингов, книг: на то, что имеет образовательную ценность. Самообразование дает вам больше возможностей не только для основной работы, но и для создания дополнительных и пассивных источников дохода.
+                </li>
+                <li>
+                    Кувшин 5: <span id="budget-5"></span>. Резерв — 10%. На этом счету хранятся деньги, которые могут быть использованы и как финансовая подушка безопасности (резервный фонд), и как накопления на крупные расходы (отпуск, автомобиль, посудомоечная машина и т. п.). Деньги на этом счету позволят выдержать финансовые испытания, избежать долгов и чувствовать себя уверенно в завтрашнем дне.
+                </li>
+                <li>
+                    Кувшин 6: <span id="budget-6"></span>. Подарки — 5%. Деньги из этого кувшина нужно использовать на цели благотворительности либо на подарки друзьям, близким, соседям. Чем проще Вы расстаетесь с деньгами (не тратите их в пустую, а отдаете, дарите), тем быстрее они к Вам вернутся. Тем более, делать подарки всегда приятно.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Прочие скрипты -->
+        <script src="js/chart.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
